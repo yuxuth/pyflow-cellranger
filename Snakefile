@@ -37,9 +37,6 @@ rule count:
 	output: "count_stamps/{sample}.stamp"
 	log: "00log/{sample}_cellranger_count.log"
 	threads: 4
-	params: 
-		fastqs = get_fastq_per_sample,
-		custom = config.get("cellranger_count_args", "")
 	shell:
 		"""
 		cellranger count --id={input}_count \
