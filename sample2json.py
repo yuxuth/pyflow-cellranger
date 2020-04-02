@@ -27,7 +27,7 @@ FILES = defaultdict(lambda: defaultdict(list))
 #             if m:
 #                 sample = m.group(1)
 #                 FILES[sample]= sample
-for root, dirs in os.walk(args.fastq_dir):
+for root, dirs, files in os.walk(args.fastq_dir):
     for dir1 in dirs:
         full_path = join(root, dirs)
         FILES[dirs]= full_path
