@@ -28,9 +28,11 @@ FILES = defaultdict(lambda: defaultdict(list))
 #                 sample = m.group(1)
 #                 FILES[sample]= sample
 for root, dirs, files in os.walk(args.fastq_dir):
-    for dir1 in dirs:
-        full_path = join(root, dirs)
-        FILES[dirs]= full_path
+    for dir in dirs:
+        if len(dir) >0:
+            for i in dir:
+                full_path = join(root, dir)
+                FILES[dir] = full_path
 
 # make sure R1 and R2 from different lanes are ordered in the same way
 # e.g. L001_R1 should pair with L001_R2, L002_R1 pair with L002_R2      
