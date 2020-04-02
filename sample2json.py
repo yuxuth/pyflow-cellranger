@@ -19,14 +19,18 @@ assert args.fastq_dir is not None, "please provide the path to the fastq folder"
 FILES = defaultdict(lambda: defaultdict(list))
 
 ## build the dictionary with full path for each fastq.gz file
-for root, dirs, files in os.walk(args.fastq_dir):
-    for file in files:
-        if file.endswith("fq.gz"):
-            full_path = join(root, file)
-            m = re.search(r"(.*)_(L[0-9]{3})_(R[12])_[0-9]{3}.fq.gz",file)
-            if m:
-                sample = m.group(1)
-                FILES[sample]= sample
+# for root, dirs, files in os.walk(args.fastq_dir):
+#     for file in files:
+#         if file.endswith("fq.gz"):
+#             full_path = join(root, file)
+#             m = re.search(r"(.*)_(L[0-9]{3})_(R[12])_[0-9]{3}.fq.gz",file)
+#             if m:
+#                 sample = m.group(1)
+#                 FILES[sample]= sample
+for root, dirs in os.walk(fastq_dir):
+    for dir1 in dirs:
+        full_path = join(root, dirs)
+        FILES[dirs]= full_path
 
 # make sure R1 and R2 from different lanes are ordered in the same way
 # e.g. L001_R1 should pair with L001_R2, L002_R1 pair with L002_R2      
