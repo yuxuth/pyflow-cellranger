@@ -39,9 +39,9 @@ rule count:
 	threads: 4
 	shell:
 		"""
-		cellranger count --id={input}_count \
+		cellranger count --id={wildcards.sample}_count \
                  --transcriptome={config[transcriptome]} \
-                 --fastqs={wildcards.sample} \
+                 --fastqs={input} \
                  --sample={wildcards.sample} \
                  --chemistry=SC3Pv3 \
                  --expect-cells=10000 \
