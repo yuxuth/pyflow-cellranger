@@ -36,7 +36,7 @@ rule count:
 	input: directory(lambda wildcards: FILES[wildcards.sample])
 	output: "count_stamps/{sample}.stamp"
 	log: "00log/{sample}_cellranger_count.log"
-	threads: 4
+	threads: 24
 	shell:
 		"""
 		cellranger count --id={wildcards.sample}_count \
@@ -46,7 +46,7 @@ rule count:
                  --chemistry=SC3Pv3 \
                  --expect-cells=10000 \
                  --localcores={threads} \
-                 --localmem=10 > {log}
+                 --localmem=160 > {log}
   		touch {output}
 		"""
 
