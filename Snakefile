@@ -28,9 +28,6 @@ localrules: all
 rule all:
     input: TARGETS
 
-## if the bcl files are in BaseSpace, need to download
-## the downloaded folder is named with the run_id
-
 
 rule count:
 	input: directory(lambda wildcards: FILES[wildcards.sample])
