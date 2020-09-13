@@ -34,6 +34,8 @@ rule count:
 	output: "count_stamps/{sample}.stamp"
 	log: "00log/{sample}_cellranger_count.log"
 	threads: 24
+	resources:
+		mem_gb=120
 	shell:
 		"""
 		cellranger count --id={wildcards.sample}_count \
@@ -43,7 +45,7 @@ rule count:
                  --chemistry=SC3Pv3 \
                  --expect-cells=10000 \
                  --localcores={threads} \
-                 --localmem=160 > {log}
+                 --localmem={resources.mem_gb} > {log}
   		touch {output}
 		"""
 
