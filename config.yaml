@@ -1,38 +1,8 @@
 
-
-download: True
-
-## if download is false, e.g. copied the bcl files from the sequencing core over HPC
-## or downloaded the bcl files from Broad for Novaseq, specify the downloaded directories below
-## it is a two column tab delimited file: first column is the run_id, second column is the FULL
-## path of the directory
-## e.g.
-## run_id   path
-## 190213 /n/holylfs/LABS/informatics/mtang/projects/brandon/novaseq_scRNA/190213_SL-NVK_0122_BHJF3WDMXX
-## 190212 /n/holylfs/LABS/informatics/mtang/projects/brandon/novaseq_scRNA/190212_SL-NVK_0122_BHJF3JDMXX
-
 #### reference  path
 transcriptome: /home/yx157/data/Index/refdata-cellranger-mm10-3.0.0
 ## additional cellranger count parameters, if you are using version 2, change --chemistry=SC3Pv2
 
-
-
-
-#################################################################
-
-############ Seurat parameters ##################################
-
-#################################################################
-
-# whether or not make a seurat object
-make_seurat: False
-
-
-#################################################################
-
-############ HPC and sample information ########################
-
-#################################################################
 
 CLUSTER_JSON: './cluster.json'
 SAMPLES_JSON: './samples.json'
