@@ -1,8 +1,10 @@
 
 #### reference  path
-transcriptome: /home/yx157/data/Index/refdata-cellranger-mm10-3.0.0
+# transcriptome: /home/yx157/data/Index/refdata-cellranger-mm10-3.0.0
+# dcc human genome
+transcriptome: /datacommons/ydiaolab/genome_ref/refdata-gex-GRCh38-2020-A 
 ## additional cellranger count parameters, if you are using version 2, change --chemistry=SC3Pv2
-
+cellranger: /opt/apps/rhel7/cellranger-3.1.0/cellranger
 
 CLUSTER_JSON: './cluster.json'
 SAMPLES_JSON: './samples.json'
