@@ -11,6 +11,7 @@ FILES = json.load(open(config['SAMPLES_JSON']))
 
 SAMPLES = sorted(FILES.keys())
 
+cellranger = config['cellranger']
 
 
 COUNT = []
@@ -38,7 +39,7 @@ rule count:
 		mem_gb=120
 	shell:
 		"""
-		cellranger count --id={wildcards.sample}_count \
+		{cellranger} count --id={wildcards.sample}_count \
                  --transcriptome={config[transcriptome]} \
                  --fastqs={input} \
                  --sample={wildcards.sample} \
