@@ -7,4 +7,4 @@ snakemake -p -j 555 --cluster-config cluster.json \
 ```
 
 
-## need to confirm --mem={resources.mem_gb} do the right thing.
+need to confirm --mem={resources.mem_gb} do the right thing.
