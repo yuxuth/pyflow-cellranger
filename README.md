@@ -5,3 +5,6 @@ a snakemake pipeline to process 10x genomics data using [cellranger](https://sup
 snakemake -p -j 555 --cluster-config cluster.json \
 --cluster "sbatch  -p common,scavenger -J {cluster.job} --mem={resources.mem_gb} -N 1 -n {threads} -o {cluster.out} -e {cluster.err} " &> log 
 ```
+
+
+## need to confirm --mem={resources.mem_gb} do the right thing.
