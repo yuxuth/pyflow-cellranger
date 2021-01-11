@@ -45,8 +45,7 @@ print()
 print ("total {} unique samples will be processed".format(len(FILES.keys())))
 print ("------------------------------------------")
 for sample in FILES_sorted.keys():
-    for read in sorted(FILES_sorted[sample]):
-        print ("{sample} directed".format(sample = sample))
+        print ("{sample} ".format(sample = sample))
 print ("------------------------------------------")
 print("check the samples.json file for fastqs belong to each sample")
 print()

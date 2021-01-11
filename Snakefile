@@ -38,7 +38,7 @@ rule count:
 	input: directory(lambda wildcards: FILES[wildcards.sample])
 	output: "count_stamps/{sample}.stamp"
 	log: "00log/{sample}_cellranger_count.log"
-	threads: 24
+	threads: 12
 	resources:
 		mem_gb=120
 	shell:
