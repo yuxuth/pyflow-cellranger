@@ -26,3 +26,9 @@ snakemake -p -j 555 --cluster-config cluster.json \
 ```
 
 
+clear up after
+```
+rm -fr *_count/SC_RNA_COUNTER_CS
+rm -fr *_count/outs/analysis/ &
+rm -fr *_count/outs/possorted_genome_bam.bam* & # may need for velocity analysis
+```
